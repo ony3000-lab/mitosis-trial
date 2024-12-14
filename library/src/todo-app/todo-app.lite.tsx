@@ -34,7 +34,8 @@ export default function TodoApp() {
             paddingRight: '1rem',
             borderRadius: '0.25rem',
             flexGrow: '1',
-            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+            boxShadow:
+              '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
           }}
           value={state.newItemName}
           onChange={(event) => (state.newItemName = event.target.value)}
@@ -65,7 +66,8 @@ export default function TodoApp() {
         <ul
           css={{
             borderRadius: '0.25rem',
-            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+            boxShadow:
+              '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
             margin: 'unset',
             padding: 'unset',
           }}

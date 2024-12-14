@@ -1,4 +1,4 @@
 packages:
-  - "library/packages/*"
-  - "library"
-  - "test-apps/*"
+  - 'library/packages/*'
+  - 'library'
+  - 'test-apps/*'

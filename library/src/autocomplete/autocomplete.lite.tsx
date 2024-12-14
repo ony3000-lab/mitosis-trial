@@ -44,7 +44,10 @@ export default function AutoComplete(props: Props) {
         return;
       }
       state.suggestions = newVals.filter((data) =>
-        state.transform(data).toLowerCase().includes(state.inputVal.toLowerCase()),
+        state
+          .transform(data)
+          .toLowerCase()
+          .includes(state.inputVal.toLowerCase()),
       );
     });
   }, [state.inputVal, props.getValues]);
@@ -52,7 +55,14 @@ export default function AutoComplete(props: Props) {
   return (
     <div css={{ padding: '10px', maxWidth: '700px' }}>
       Autocomplete:
-      <div css={{ position: 'relative', display: 'flex', gap: '16px', alignItems: 'stretch' }}>
+      <div
+        css={{
+          position: 'relative',
+          display: 'flex',
+          gap: '16px',
+          alignItems: 'stretch',
+        }}
+      >
         <input
           css={{
             paddingTop: '0.5rem',
@@ -63,7 +73,8 @@ export default function AutoComplete(props: Props) {
             borderWidth: '1px',
             borderColor: '#000000',
             width: '100%',
-            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+            boxShadow:
+              '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
           }}
           value={state.inputVal}
           onChange={(event) => (state.inputVal = event.target.value)}
@@ -96,7 +107,8 @@ export default function AutoComplete(props: Props) {
             height: '10rem',
             margin: 'unset',
             padding: 'unset',
-            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+            boxShadow:
+              '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
           }}
         >
           <For each={state.suggestions}>
@@ -114,7 +126,10 @@ export default function AutoComplete(props: Props) {
                 }}
                 onClick={() => state.handleClick(item)}
               >
-                <Show when={props.renderChild} else={<span>{state.transform(item)}</span>}>
+                <Show
+                  when={props.renderChild}
+                  else={<span>{state.transform(item)}</span>}
+                >
                   <props.renderChild item={item} />
                 </Show>
               </li>
